@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Demo";
+    Layout = "~/Views/Shared/_jsTreeDemo.cshtml";
+}
+
+
+
+<h4>Nodes with children</h4>
+<div class="row">
+    <div class="col-md-4">
+        <p>To create a node with child nodes simpy nest an <code>&lt;ul&gt;</code>.</p>
+        <p>Internally jstree converts the text to a link, so if there already is a link in the markup jstree won't mind. Like <code>Child node 2</code>.<br />Clicking on the link however will not direct the user to a new page, to do that - intercept the <code>changed.jstree</code> event and act accordingly.</p>
+        <p>Keep reading for the section on handling events.</p>
+    </div>
+    <div class="col-md-4">
+        <pre><code>&lt;div id="html1"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Root node 1<strong>
+      &lt;ul&gt;
+        &lt;li&gt;Child node 1&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Child node 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;</strong>
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="col-md-4">
+        <div id="using_html_2" class="demo">
+            <ul>
+                <li>
+                    Root node 1
+                    <ul>
+                        <li>Child node 1</li>
+                        <li><a href="#">Child node 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            $(function () {
+                $('#using_html_2').jstree();
+            });
+        </script>
+    </div>
+</div>
